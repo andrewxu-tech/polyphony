@@ -35,15 +35,36 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.channel {
+  height: 50px;
+  width: 100%;
+  background-color: red;
+  border: 5px solid yellow;
+  border-radius: 15px;
+  display: flex; }
+  .channel .bar {
+    height: 100%;
+    width: 100%;
+    background-color: green;
+    border: 5px solid black;
+    border-radius: 10px;
+    display: flex; }
+    .channel .bar .note {
+      height: 100%;
+      width: 100%;
+      background-color: blue;
+      cursor: pointer;
+      border-radius: 5px; }
+      .channel .bar .note.active {
+        background-color: white; }
+
+* {
+  box-sizing: border-box; }
+
 #root {
   height: 100vh;
   width: 100vw;
   min-width: 1000px;
   background-color: pink; }
-
-.channel {
-  height: 50px;
-  width: 100%;
-  background-color: red; }
 
 /*# sourceMappingURL=main.css.map */

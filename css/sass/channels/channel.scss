@@ -1,0 +1,29 @@
+.channel {
+  height: 50px;
+  width: 100%;
+  background-color: red;
+  border: 5px solid yellow;
+  border-radius: 15px;
+  display: flex;
+
+  .bar {
+    height: 100%;
+    width: 100%;
+    background-color: green;
+    border: 5px solid black;
+    border-radius: 10px;
+    display: flex;
+
+    .note {
+      height: 100%;
+      width: 100%;
+      background-color: blue;
+      cursor: pointer;
+      border-radius: 5px;
+
+      &.active {
+        background-color: white;
+      }
+    }
+  }
+}
