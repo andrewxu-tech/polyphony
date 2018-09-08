@@ -1,0 +1,14 @@
+@import 'base/reset';
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  min-width: 1000px;
+  background-color: pink;
+}
+
+.channel {
+  height: 50px;
+  width: 100%;
+  background-color: red;
+}
