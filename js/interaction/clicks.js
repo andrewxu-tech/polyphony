@@ -1,12 +1,16 @@
+import musicData from './music-data.js';
+
 const clicks = {
-  createClicksInteraction: () => {
+  createClicksInteraction: (instrument, pitch) => {
     const notes = document.getElementsByClassName('note');
-    [...notes].forEach(note => {
+    [...notes].forEach((note, index) => {
       note.addEventListener('click', () => {
         if (![...note.classList].includes('active')) {
           note.classList.add('active');
+          musicData[`${instrument}-${pitch}`][index] = true;
         } else {
           note.classList.remove('active');
+          musicData[`${instrument}-${pitch}`][index] = false;
         }
       });
     });

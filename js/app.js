@@ -7,9 +7,9 @@ const rootDiv = document.getElementById('root');
 
 channels.createChannel(
   rootDiv,
+  'drums',
+  'hihat',
   constants.barNumber,
   constants.beatsInBar,
   constants.subdivision
 );
-
-clicks.createClicksInteraction();

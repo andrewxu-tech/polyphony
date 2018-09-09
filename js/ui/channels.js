@@ -1,7 +1,13 @@
+import musicData from '../interaction/music-data.js';
+import clicks from '../interaction/clicks.js';
+
 const channels = {
-  createChannel: (rootDiv, barNumber, beatsInBar, subdivision) => {
+  createChannel: (rootDiv, instrument, pitch, barNumber, beatsInBar, subdivision) => {
     const channel = document.createElement('div');
     channel.classList.add('channel');
+    channel.classList.add(instrument);
+    channel.classList.add(pitch);
+    musicData[`${instrument}-${pitch}`] = [];
 
     for (let i = 0; i < barNumber; i++) {
       const bar = document.createElement('div');
@@ -16,6 +22,7 @@ const channels = {
     }
 
     rootDiv.appendChild(channel);
+    clicks.createClicksInteraction(instrument, pitch);
   }
 };
 
