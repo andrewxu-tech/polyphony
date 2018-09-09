@@ -7,6 +7,7 @@ const channels = {
     channel.classList.add('channel');
     channel.classList.add(instrument);
     channel.classList.add(pitch);
+
     musicData[`${instrument}-${pitch}`] = [];
 
     for (let i = 0; i < barNumber; i++) {
@@ -22,7 +23,13 @@ const channels = {
     }
 
     rootDiv.appendChild(channel);
-    clicks.createClicksInteraction(instrument, pitch);
+
+    const audioElement = document.createElement('audio');
+    audioElement.classList.add(`${instrument}-${pitch}-audio`);
+    audioElement.type = 'audio/mpeg';
+
+    rootDiv.appendChild(audioElement);
+    clicks.createClicksInteraction(channel, instrument, pitch);
   }
 };
 
