@@ -21,5 +21,5 @@ export default (barNumber, beatsInBar, subdivision) => {
     } else {
       counter++;
     }
-  }, 250);
+  }, 200);
 };

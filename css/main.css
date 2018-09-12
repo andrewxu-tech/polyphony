@@ -35,27 +35,51 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.channel {
+.channel .channel-title {
+  width: 500px; }
+.channel.synth {
   height: 50px;
   width: 100%;
   background-color: red;
   border: 5px solid yellow;
   border-radius: 15px;
   display: flex; }
-  .channel .bar {
+  .channel.synth .bar {
     height: 100%;
     width: 100%;
     background-color: green;
     border: 5px solid black;
     border-radius: 10px;
     display: flex; }
-    .channel .bar .note {
+    .channel.synth .bar .note {
       height: 100%;
       width: 100%;
       background-color: blue;
       cursor: pointer;
       border-radius: 5px; }
-      .channel .bar .note.active {
+      .channel.synth .bar .note.active {
+        background-color: white; }
+.channel.drums {
+  height: 50px;
+  width: 100%;
+  background-color: red;
+  border: 5px solid yellow;
+  border-radius: 15px;
+  display: flex; }
+  .channel.drums .bar {
+    height: 100%;
+    width: 100%;
+    background-color: green;
+    border: 5px solid black;
+    border-radius: 10px;
+    display: flex; }
+    .channel.drums .bar .note {
+      height: 100%;
+      width: 100%;
+      background-color: blue;
+      cursor: pointer;
+      border-radius: 5px; }
+      .channel.drums .bar .note.active {
         background-color: white; }
 
 * {

@@ -8,6 +8,11 @@ const channels = {
     channel.classList.add(instrument);
     channel.classList.add(pitch);
 
+    const channelTitle = document.createElement('div');
+    channelTitle.classList.add('channel-title');
+    channelTitle.innerHTML = `${instrument}: ${pitch}`;
+    channel.appendChild(channelTitle);
+
     musicData[`${instrument}-${pitch}`] = [];
 
     for (let i = 0; i < barNumber; i++) {
