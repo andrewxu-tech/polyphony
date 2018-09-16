@@ -67,6 +67,36 @@ table {
     box-shadow: 0 0 0 10px white; }
   100% {
     box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); } }
+.channel-container.bass-container {
+  border: 5px solid #00252e;
+  background-color: #00252e;
+  border-radius: 20px; }
+.channel-container .channel {
+  border-radius: 15px; }
+  .channel-container .channel.bass {
+    height: 30px;
+    background-color: #008bad; }
+    .channel-container .channel.bass.black-note {
+      background-color: #003947; }
+      .channel-container .channel.bass.black-note .bar {
+        background-color: #003947;
+        border-left: 5px solid #003947;
+        border-right: 5px solid #003947; }
+        .channel-container .channel.bass.black-note .bar .note {
+          background-color: #008bad;
+          border: 5px solid #00627a; }
+          .channel-container .channel.bass.black-note .bar .note.active {
+            background-color: white; }
+    .channel-container .channel.bass .bar {
+      background-color: #008bad;
+      border-left: 5px solid #008bad;
+      border-right: 5px solid #008bad; }
+      .channel-container .channel.bass .bar .note {
+        background-color: #14d0ff;
+        border: 5px solid #00b4e0; }
+        .channel-container .channel.bass .bar .note.active {
+          background-color: white; }
+
 .channel.drums {
   background-color: #003815;
   border: 5px solid #001f0b; }
@@ -79,36 +109,35 @@ table {
       .channel.drums .bar .note.active {
         background-color: white; }
 
-.channel-container {
-  background-color: #4d000a; }
-  .channel-container.synth-container {
-    border: 5px solid #4d000a;
-    border-radius: 20px; }
-  .channel-container .channel {
-    border-radius: 15px; }
-    .channel-container .channel.synth {
-      height: 30px;
-      background-color: #ff0022; }
-      .channel-container .channel.synth.black-note {
-        background-color: #800011; }
-        .channel-container .channel.synth.black-note .bar {
-          background-color: #800011;
-          border-left: 5px solid #800011;
-          border-right: 5px solid #800011; }
-          .channel-container .channel.synth.black-note .bar .note {
-            background-color: #e6001f;
-            border: 5px solid #b30018; }
-            .channel-container .channel.synth.black-note .bar .note.active {
-              background-color: white; }
-      .channel-container .channel.synth .bar {
-        background-color: #ff0022;
-        border-left: 5px solid #ff0022;
-        border-right: 5px solid #ff0022; }
-        .channel-container .channel.synth .bar .note {
-          background-color: #ff99a7;
-          border: 5px solid #ff667a; }
-          .channel-container .channel.synth .bar .note.active {
+.channel-container.synth-container {
+  border: 5px solid #4d000a;
+  background-color: #4d000a;
+  border-radius: 20px; }
+.channel-container .channel {
+  border-radius: 15px; }
+  .channel-container .channel.synth {
+    height: 30px;
+    background-color: #ff0022; }
+    .channel-container .channel.synth.black-note {
+      background-color: #800011; }
+      .channel-container .channel.synth.black-note .bar {
+        background-color: #800011;
+        border-left: 5px solid #800011;
+        border-right: 5px solid #800011; }
+        .channel-container .channel.synth.black-note .bar .note {
+          background-color: #e6001f;
+          border: 5px solid #b30018; }
+          .channel-container .channel.synth.black-note .bar .note.active {
             background-color: white; }
+    .channel-container .channel.synth .bar {
+      background-color: #ff0022;
+      border-left: 5px solid #ff0022;
+      border-right: 5px solid #ff0022; }
+      .channel-container .channel.synth .bar .note {
+        background-color: #ff99a7;
+        border: 5px solid #ff667a; }
+        .channel-container .channel.synth .bar .note.active {
+          background-color: white; }
 
 * {
   box-sizing: border-box; }

@@ -1,5 +1,5 @@
 export default {
-  barNumber: 1,
+  barNumber: 4,
   beatsInBar: 4,
   subdivision: 2,
   instrumentSettings: {
@@ -8,6 +8,9 @@ export default {
     },
     synth: {
       delay: true
+    },
+    bass: {
+      delay: false
     }
   }
 };
