@@ -11,7 +11,8 @@ instruments.createInstrument(
   ['cymbal', 'hihat', 'clap', 'snare', 'hightom', 'lowtom', 'kick'],
   constants.barNumber,
   constants.beatsInBar,
-  constants.subdivision
+  constants.subdivision,
+  false
 );
 
 instruments.createInstrument(
@@ -22,7 +23,8 @@ instruments.createInstrument(
     'a3', 'gsharp3', 'g3', 'fsharp3', 'f3'],
   constants.barNumber,
   constants.beatsInBar,
-  constants.subdivision
+  constants.subdivision,
+  true
 );
 
 playSound(constants.barNumber, constants.beatsInBar, constants.subdivision);

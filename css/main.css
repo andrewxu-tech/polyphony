@@ -35,19 +35,24 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.channel {
+.channel-container .channel {
   height: 50px;
   width: 100%;
   border-radius: 15px;
   display: flex; }
-  .channel .channel-title {
-    width: 500px; }
-  .channel .bar {
+  .channel-container .channel .channel-title {
+    width: 500px;
+    color: white;
+    text-align: center;
+    font-family: 'Dosis';
+    font-weight: 800;
+    font-size: 20px; }
+  .channel-container .channel .bar {
     height: 100%;
     width: 100%;
     border-radius: 15px;
     display: flex; }
-    .channel .bar .note {
+    .channel-container .channel .bar .note {
       height: 100%;
       width: 100%;
       cursor: pointer;
@@ -63,28 +68,47 @@ table {
       background-color: #00b843;
       border: 5px solid #008531; }
       .channel.drums .bar .note.active {
-        background-color: #b8ffd2; }
-
-.channel.synth {
-  background-color: red;
-  border: 5px solid yellow; }
-  .channel.synth.black-note {
-    background-color: brown; }
-  .channel.synth .bar {
-    background-color: green;
-    border: 5px solid black; }
-    .channel.synth .bar .note {
-      background-color: blue; }
-      .channel.synth .bar .note.active {
         background-color: white; }
+
+.channel-container {
+  background-color: #4d000a; }
+  .channel-container.synth-container {
+    border: 5px solid #4d000a;
+    border-radius: 20px; }
+  .channel-container .channel {
+    border-radius: 15px; }
+    .channel-container .channel.synth {
+      height: 30px;
+      background-color: #ff0022; }
+      .channel-container .channel.synth.black-note {
+        background-color: #800011; }
+        .channel-container .channel.synth.black-note .bar {
+          background-color: #800011;
+          border-left: 5px solid #800011;
+          border-right: 5px solid #800011; }
+          .channel-container .channel.synth.black-note .bar .note {
+            background-color: #e6001f;
+            border: 5px solid #b30018; }
+            .channel-container .channel.synth.black-note .bar .note.active {
+              background-color: white; }
+      .channel-container .channel.synth .bar {
+        background-color: #ff0022;
+        border-left: 5px solid #ff0022;
+        border-right: 5px solid #ff0022; }
+        .channel-container .channel.synth .bar .note {
+          background-color: #ff99a7;
+          border: 5px solid #ff667a; }
+          .channel-container .channel.synth .bar .note.active {
+            background-color: white; }
 
 * {
   box-sizing: border-box; }
 
 #root {
   height: 100vh;
-  width: 100vw;
-  min-width: 1000px;
-  background-color: pink; }
+  width: 100vw; }
+
+.bar {
+  max-width: 500px; }
 
 /*# sourceMappingURL=main.css.map */

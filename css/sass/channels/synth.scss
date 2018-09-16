@@ -1,22 +1,49 @@
-.channel {
+.channel-container {
+  background-color: #4d000a;
 
-  &.synth {
-    background-color: red;
-    border: 5px solid yellow;
+  &.synth-container {
+    border: 5px solid #4d000a;
+    border-radius: 20px;
+  }
 
-    &.black-note {
-      background-color: brown;
-    }
+  .channel {
+    border-radius: 15px;
 
-    .bar {
-      background-color: green;
-      border: 5px solid black;
+    &.synth {
+      height: 30px;
+      background-color: #ff0022;
 
-      .note {
-        background-color: blue;
+      &.black-note {
+        background-color: #800011;
 
-        &.active {
-          background-color: white;
+        .bar {
+          background-color: #800011;
+          border-left: 5px solid #800011;
+          border-right: 5px solid #800011;
+
+          .note {
+            background-color: #e6001f;
+            border: 5px solid #b30018;
+
+            &.active {
+              background-color: white;
+            }
+          }
+        }
+      }
+
+      .bar {
+        background-color: #ff0022;
+        border-left: 5px solid #ff0022;
+        border-right: 5px solid #ff0022;
+
+        .note {
+          background-color: #ff99a7;
+          border: 5px solid #ff667a;
+
+          &.active {
+            background-color: white;
+          }
         }
       }
     }
