@@ -57,7 +57,16 @@ table {
       width: 100%;
       cursor: pointer;
       border-radius: 10px; }
-
+      .channel-container .channel .bar .note.active-animation {
+        content: '';
+        z-index: 100;
+        animation-name: activenote;
+        animation-duration: 1s; }
+@keyframes activenote {
+  0% {
+    box-shadow: 0 0 0 10px white; }
+  100% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); } }
 .channel.drums {
   background-color: #003815;
   border: 5px solid #001f0b; }

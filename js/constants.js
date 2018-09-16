@@ -1,5 +1,5 @@
 export default {
-  barNumber: 4,
+  barNumber: 1,
   beatsInBar: 4,
   subdivision: 2,
   instrumentSettings: {

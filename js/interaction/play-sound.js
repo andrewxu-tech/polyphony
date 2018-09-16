@@ -7,12 +7,27 @@ export default (barNumber, beatsInBar, subdivision) => {
   setInterval(() => {
     Object.keys(musicData).forEach((key) => {
       const currentInstrument = key.split('-')[0];
+      const currentPitch = key.split('-')[1];
+      const allNoteElementsInTrack = [];
+
       if (musicData[key][counter + 1]) {
         const audioElement = document.getElementsByClassName(`${key}-audio`)[0];
         audioElement.setAttribute(
           'src',
           `assets/sounds/${currentInstrument}/${key}.mp3`
         );
+        const currentTrack = document.getElementsByClassName(`${currentInstrument} ${currentPitch}`)[0];
+        [...currentTrack.childNodes].forEach(bar => {
+          if ([...bar.classList].includes('bar')) {
+            allNoteElementsInTrack.push(...bar.childNodes);
+          }
+        });
+        const currentCounter = counter;
+        allNoteElementsInTrack[counter].classList.add('active-animation');
+        setTimeout(() => {
+          console.log(allNoteElementsInTrack[counter]);
+          allNoteElementsInTrack[currentCounter].classList.remove('active-animation');
+        }, 1100);
         audioElement.play();
 
         if (constants.instrumentSettings[currentInstrument].delay) {
