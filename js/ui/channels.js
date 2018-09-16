@@ -1,16 +1,20 @@
 import musicData from '../interaction/music-data.js';
 import clicks from '../interaction/clicks.js';
+import emojiMap from './emoji-map.js';
 
 const channels = {
-  createChannel: (rootDiv, instrument, pitch, barNumber, beatsInBar, subdivision) => {
+  createChannel: (rootDiv, instrument, pitch, barNumber, beatsInBar, subdivision, isWhiteNote) => {
     const channel = document.createElement('div');
     channel.classList.add('channel');
     channel.classList.add(instrument);
     channel.classList.add(pitch);
+    if (!isWhiteNote) {
+      channel.classList.add('black-note');
+    }
 
     const channelTitle = document.createElement('div');
     channelTitle.classList.add('channel-title');
-    channelTitle.innerHTML = `${instrument}: ${pitch}`;
+    channelTitle.innerHTML = `${emojiMap[instrument]}: ${pitch}`;
     channel.appendChild(channelTitle);
 
     musicData[`${instrument}-${pitch}`] = [];

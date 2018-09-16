@@ -1,0 +1,24 @@
+.channel {
+
+  &.synth {
+    background-color: red;
+    border: 5px solid yellow;
+
+    &.black-note {
+      background-color: brown;
+    }
+
+    .bar {
+      background-color: green;
+      border: 5px solid black;
+
+      .note {
+        background-color: blue;
+
+        &.active {
+          background-color: white;
+        }
+      }
+    }
+  }
+}

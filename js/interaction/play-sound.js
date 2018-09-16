@@ -6,7 +6,7 @@ export default (barNumber, beatsInBar, subdivision) => {
   setInterval(() => {
     Object.keys(musicData).forEach((key) => {
       const currentInstrument = key.split('-')[0];
-      if (musicData[key][counter]) {
+      if (musicData[key][counter + 1]) {
         const audioElement = document.getElementsByClassName(`${key}-audio`)[0];
         audioElement.setAttribute(
           'src',

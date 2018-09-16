@@ -1,5 +1,7 @@
 @import 'base/reset';
-@import 'channels/channel';
+@import 'channels/base';
+@import 'channels/drums';
+@import 'channels/synth';
 
 * {
     box-sizing: border-box;

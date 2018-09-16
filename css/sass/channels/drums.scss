@@ -1,0 +1,21 @@
+.channel {
+
+  &.drums {
+    background-color: #003815;
+    border: 5px solid #001f0b;
+
+    .bar {
+      background-color: #006b27;
+      border: 5px solid #00521e;
+
+      .note {
+        background-color: #00b843;
+        border: 5px solid #008531;
+
+        &.active {
+          background-color: #b8ffd2;
+        }
+      }
+    }
+  }
+}

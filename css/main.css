@@ -35,51 +35,47 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.channel .channel-title {
-  width: 500px; }
-.channel.synth {
+.channel {
   height: 50px;
   width: 100%;
-  background-color: red;
-  border: 5px solid yellow;
   border-radius: 15px;
   display: flex; }
-  .channel.synth .bar {
+  .channel .channel-title {
+    width: 500px; }
+  .channel .bar {
     height: 100%;
     width: 100%;
-    background-color: green;
-    border: 5px solid black;
-    border-radius: 10px;
+    border-radius: 15px;
     display: flex; }
-    .channel.synth .bar .note {
+    .channel .bar .note {
       height: 100%;
       width: 100%;
-      background-color: blue;
       cursor: pointer;
-      border-radius: 5px; }
-      .channel.synth .bar .note.active {
-        background-color: white; }
+      border-radius: 10px; }
+
 .channel.drums {
-  height: 50px;
-  width: 100%;
-  background-color: red;
-  border: 5px solid yellow;
-  border-radius: 15px;
-  display: flex; }
+  background-color: #003815;
+  border: 5px solid #001f0b; }
   .channel.drums .bar {
-    height: 100%;
-    width: 100%;
-    background-color: green;
-    border: 5px solid black;
-    border-radius: 10px;
-    display: flex; }
+    background-color: #006b27;
+    border: 5px solid #00521e; }
     .channel.drums .bar .note {
-      height: 100%;
-      width: 100%;
-      background-color: blue;
-      cursor: pointer;
-      border-radius: 5px; }
+      background-color: #00b843;
+      border: 5px solid #008531; }
       .channel.drums .bar .note.active {
+        background-color: #b8ffd2; }
+
+.channel.synth {
+  background-color: red;
+  border: 5px solid yellow; }
+  .channel.synth.black-note {
+    background-color: brown; }
+  .channel.synth .bar {
+    background-color: green;
+    border: 5px solid black; }
+    .channel.synth .bar .note {
+      background-color: blue; }
+      .channel.synth .bar .note.active {
         background-color: white; }
 
 * {
