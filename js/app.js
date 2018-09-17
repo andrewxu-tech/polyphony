@@ -12,7 +12,7 @@ instruments.createInstrument(
   constants.barNumber,
   constants.beatsInBar,
   constants.subdivision,
-  true
+  5
 );
 
 instruments.createInstrument(
@@ -24,7 +24,7 @@ instruments.createInstrument(
   constants.barNumber,
   constants.beatsInBar,
   constants.subdivision,
-  true
+  5
 );
 
 instruments.createInstrument(
@@ -35,7 +35,7 @@ instruments.createInstrument(
   constants.barNumber,
   constants.beatsInBar,
   constants.subdivision,
-  true
+  5
 );
 
 playSound(constants.barNumber, constants.beatsInBar, constants.subdivision);

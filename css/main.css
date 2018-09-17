@@ -59,7 +59,7 @@ table {
       border-radius: 10px; }
       .channel-container .channel .bar .note.active-animation {
         content: '';
-        z-index: 100;
+        z-index: 1;
         animation-name: activenote;
         animation-duration: 1s; }
 @keyframes activenote {

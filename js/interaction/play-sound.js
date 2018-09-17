@@ -25,33 +25,24 @@ export default (barNumber, beatsInBar, subdivision) => {
         const currentCounter = counter;
         allNoteElementsInTrack[counter].classList.add('active-animation');
         setTimeout(() => {
-          console.log(allNoteElementsInTrack[counter]);
           allNoteElementsInTrack[currentCounter].classList.remove('active-animation');
         }, 1100);
         audioElement.play();
 
         if (constants.instrumentSettings[currentInstrument].delay) {
-          const delay1AudioElement = document.getElementsByClassName(`${key}-delay-1-audio`)[0];
-          delay1AudioElement.volume = 0.5;
-          delay1AudioElement.setAttribute(
-            'src',
-            `assets/sounds/${currentInstrument}/${key}.mp3`
-          );
+          const delayFactor = constants.instrumentSettings[currentInstrument].delay;
+          for (let i = 1; i <= delayFactor; i++) {
+            const delayAudioElement = document.getElementsByClassName(`${key}-delay-${i}-audio`)[0];
+            delayAudioElement.volume = Math.pow(0.5, i);
+            delayAudioElement.setAttribute(
+              'src',
+              `assets/sounds/${currentInstrument}/${key}.mp3`
+            );
 
-          setTimeout(() => {
-            delay1AudioElement.play();
-          }, 200);
-
-          const delay2AudioElement = document.getElementsByClassName(`${key}-delay-2-audio`)[0];
-          delay2AudioElement.volume = 0.2;
-          delay2AudioElement.setAttribute(
-            'src',
-            `assets/sounds/${currentInstrument}/${key}.mp3`
-          );
-
-          setTimeout(() => {
-            delay2AudioElement.play();
-          }, 400);
+            setTimeout(() => {
+              delayAudioElement.play();
+            }, constants.tempo * i);
+          }
         }
       }
     });
@@ -61,5 +52,5 @@ export default (barNumber, beatsInBar, subdivision) => {
     } else {
       counter++;
     }
-  }, 200);
+  }, constants.tempo);
 };

@@ -1,16 +1,17 @@
 export default {
-  barNumber: 4,
+  barNumber: 1,
   beatsInBar: 4,
   subdivision: 2,
+  tempo: 200,
   instrumentSettings: {
     drums: {
-      delay: false
+      delay: 5
     },
     synth: {
-      delay: true
+      delay: 5
     },
     bass: {
-      delay: false
+      delay: 5
     }
   }
 };

@@ -28,7 +28,7 @@
 
         &.active-animation {
           content: '';
-          z-index: 100;
+          z-index: 1;
           animation-name: activenote;
           animation-duration: 1s;
 

@@ -3,7 +3,7 @@ import clicks from '../interaction/clicks.js';
 import emojiMap from './emoji-map.js';
 
 const channels = {
-  createChannel: (rootDiv, channelContainer, instrument, pitch, barNumber, beatsInBar, subdivision, isWhiteNote) => {
+  createChannel: (rootDiv, channelContainer, instrument, pitch, barNumber, beatsInBar, subdivision, isWhiteNote, delay) => {
     const channel = document.createElement('div');
     channel.classList.add('channel');
     channel.classList.add(instrument);
@@ -37,17 +37,14 @@ const channels = {
     audioElement.classList.add(`${instrument}-${pitch}-audio`);
     audioElement.type = 'audio/mpeg';
 
-    const delay1AudioElement = document.createElement('audio');
-    delay1AudioElement.classList.add(`${instrument}-${pitch}-delay-1-audio`);
-    delay1AudioElement.type = 'audio/mpeg';
-
-    const delay2AudioElement = document.createElement('audio');
-    delay2AudioElement.classList.add(`${instrument}-${pitch}-delay-2-audio`);
-    delay2AudioElement.type = 'audio/mpeg';
+    for (let i = 1; i <= delay; i++) {
+      const delayAudioElement = document.createElement('audio');
+      delayAudioElement.classList.add(`${instrument}-${pitch}-delay-${i}-audio`);
+      delayAudioElement.type = 'audio/mpeg';
+      rootDiv.appendChild(delayAudioElement);
+    }
 
     rootDiv.appendChild(audioElement);
-    rootDiv.appendChild(delay1AudioElement);
-    rootDiv.appendChild(delay2AudioElement);
     clicks.createClicksInteraction(channel, instrument, pitch);
   }
 };

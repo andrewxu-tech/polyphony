@@ -27,6 +27,7 @@ const instruments = {
         beatsInBar,
         subdivision,
         isWhiteNote,
+        delay
       );
     });
   }
