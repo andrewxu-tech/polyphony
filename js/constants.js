@@ -1,8 +1,8 @@
 export default {
-  barNumber: 1,
+  barNumber: 4,
   beatsInBar: 4,
   subdivision: 2,
-  tempo: 200,
+  tempo: 250,
   instrumentSettings: {
     drums: {
       delay: 5
