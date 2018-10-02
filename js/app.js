@@ -1,5 +1,8 @@
 import constants from './constants.js';
 import instruments from './ui/instruments.js';
+import menubar from './ui/menubar.js';
+
+menubar();
 
 import playSound from './interaction/play-sound.js';
 

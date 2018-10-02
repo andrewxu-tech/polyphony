@@ -1,6 +1,6 @@
 export default {
-  barNumber: 4,
-  beatsInBar: 4,
+  barNumber: 1,
+  beatsInBar: 3,
   subdivision: 2,
   tempo: 250,
   instrumentSettings: {

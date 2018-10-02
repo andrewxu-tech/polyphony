@@ -4,19 +4,31 @@ import constants from '../constants.js';
 export default (barNumber, beatsInBar, subdivision) => {
   const totalLength = barNumber * beatsInBar * subdivision;
   let counter = 0;
-  setInterval(() => {
+
+  let currentTempo = constants.tempo;
+
+  const restartPlaySoundsInterval = () => {
+    clearInterval(playSoundsInterval);
+    playSoundsInterval = setInterval(playSoundsFunction, currentTempo);
+  };
+
+  const playSoundsFunction = () => {
     Object.keys(musicData).forEach((key) => {
       const currentInstrument = key.split('-')[0];
       const currentPitch = key.split('-')[1];
       const allNoteElementsInTrack = [];
 
       if (musicData[key][counter + 1]) {
-        const audioElement = document.getElementsByClassName(`${key}-audio`)[0];
+        const audioElement = document.getElementsByClassName(
+          `${key}-audio`
+        )[0];
         audioElement.setAttribute(
           'src',
           `assets/sounds/${currentInstrument}/${key}.mp3`
         );
-        const currentTrack = document.getElementsByClassName(`${currentInstrument} ${currentPitch}`)[0];
+        const currentTrack = document.getElementsByClassName(
+          `${currentInstrument} ${currentPitch}`
+        )[0];
         [...currentTrack.childNodes].forEach(bar => {
           if ([...bar.classList].includes('bar')) {
             allNoteElementsInTrack.push(...bar.childNodes);
@@ -32,7 +44,9 @@ export default (barNumber, beatsInBar, subdivision) => {
         if (constants.instrumentSettings[currentInstrument].delay) {
           const delayFactor = constants.instrumentSettings[currentInstrument].delay;
           for (let i = 1; i <= delayFactor; i++) {
-            const delayAudioElement = document.getElementsByClassName(`${key}-delay-${i}-audio`)[0];
+            const delayAudioElement = document.getElementsByClassName(
+              `${key}-delay-${i}-audio`
+            )[0];
             delayAudioElement.volume = Math.pow(0.5, i);
             delayAudioElement.setAttribute(
               'src',
@@ -52,5 +66,12 @@ export default (barNumber, beatsInBar, subdivision) => {
     } else {
       counter++;
     }
-  }, constants.tempo);
+
+    if (currentTempo !== constants.tempo) {
+      currentTempo = constants.tempo;
+      restartPlaySoundsInterval();
+    }
+  };
+
+  let playSoundsInterval = setInterval(playSoundsFunction, currentTempo);
 };
